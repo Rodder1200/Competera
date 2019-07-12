@@ -13,7 +13,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename="/Competera">
           <div>
             <ToastContainer hideProgressBar={true} />
             <div className="container">
