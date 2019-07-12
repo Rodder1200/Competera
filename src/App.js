@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import store from './config/store';
+import MainPage from './components/MainPage';
+import NotePage from './components/NotePage';
+import CreateNote from './components/CreateNote';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            <ToastContainer hideProgressBar={true} />
+            <div className="container">
+              <div>
+                <h1 className="display-2">
+                  <Link to="/">COMPETERA TEST APP</Link>
+                </h1>
+              </div>
+              <Switch>
+                <Route exact path={'/'} component={MainPage} />
+                <Route path={'/note/:id'} component={NotePage} />
+                <Route path={'/create/:id'} component={CreateNote} />
+              </Switch>
+            </div>
+          </div>
+        </BrowserRouter>
+      </Provider>
+    );
+  }
 }
-
-export default App;
