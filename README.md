@@ -1,6 +1,7 @@
 
 ## Deployed on https://rodder1200.github.io/Competera/
 
+## Task 2 (Increment): https://github.com/Rodder1200/Competera/blob/master/public/test-increment.js
 ## Task 3 (Palindrom): https://github.com/Rodder1200/Competera/blob/master/public/test-palindrom.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
